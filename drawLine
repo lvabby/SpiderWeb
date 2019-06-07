@@ -1,0 +1,22 @@
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
+public class SpiderWeb extends JPanel {
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g); //call paintComponent to ensure the panel display correctly
+		
+		int width = getWidth();// total width 
+		int height = getHeight();//total height
+		int i=0;
+		
+		while(i<=width-15) {
+		g.drawLine(0,i,i,height);
+		g.drawLine(0,height-i,i,0);
+		g.drawLine(width,i,width-i,height);
+		g.drawLine(width,height-i,width-i,0);
+		i+=15;
+		}
+	}
+
+}//end class 
